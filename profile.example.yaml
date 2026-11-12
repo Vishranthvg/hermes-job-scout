@@ -1,0 +1,136 @@
+# Copy this file to profile.yaml (or ~/.hermes/job-scout/profile.yaml) and edit it.
+# Do not commit a filled-in profile.yaml. It can contain personal details.
+
+# Job titles to match, in order of preference. A posting must match at least
+# one of these (including seniority prefixes such as "Senior Project Manager").
+target_titles:
+  - Project Manager
+  - Technical Project Manager
+  - Program Manager
+  - Technical Program Manager
+  - Implementation Manager
+  - Delivery Manager
+  - Product Manager
+
+# Locations you will consider. City, region, or country names.
+# "Remote, Canada" matches a user who listed Toronto, because Toronto is in Canada.
+# US-only remote roles are excluded unless you also list the United States.
+locations:
+  - Toronto
+  - Ontario
+  - Canada
+
+# If true, remote and "anywhere" roles are also eligible (subject to country
+# restrictions on the posting).
+remote_ok: true
+
+# Annual salary floor. Jobs with a clearly lower published maximum are dropped.
+# Jobs with no salary listed are kept. Currencies are not converted: a USD
+# salary is not compared to a CAD floor.
+salary_floor: 80000
+salary_currency: CAD
+
+# Phrases that should appear in the title or description when possible.
+# Missing one does not drop a job, but it lowers the score.
+must_haves:
+  - stakeholder
+  - agile
+
+# If any of these appear in the title or description, the job is dropped.
+deal_breakers:
+  - unpaid
+  - internship
+  - unpaid internship
+
+# Extra keywords used for scoring, on top of words drawn from the resume.
+keywords:
+  - project management
+  - PMP
+  - Scrum
+  - stakeholder management
+  - risk management
+  - implementation
+  - vendor management
+  - cross-functional
+
+# Path to a plain-text resume. Relative paths are resolved against the
+# directory that contains this profile. Leave empty to score against titles
+# and keywords only.
+resume_path: resume.example.txt
+
+# How many matches to keep after scoring and dedupe. The daily digest aims
+# for 5 to 10; 10 is a good default.
+max_results: 10
+
+# Minimum score (0-100) to appear in the digest.
+min_score: 25
+
+# Daily run time used by the install helper and the skill blueprint.
+# Hermes cron expressions use the timezone configured for Hermes (often the
+# VPS local time). Set the VPS or Hermes timezone to match.
+schedule_time: "08:00"
+timezone: "America/Toronto"
+
+# Mark shown jobs as seen at the end of a successful scan. Set true if you
+# run with `hermes cron create --no-agent` (one shot, no second command).
+# Leave false if the agent marks seen after a successful Telegram delivery.
+update_seen_on_scan: false
+
+# Sources. Set a value to false to skip it. Optional APIs that need a key
+# are skipped automatically (and reported) when the key is not set.
+sources:
+  remotive: true
+  arbeitnow: true
+  jobicy: true
+  remoteok: true
+  himalayas: true
+  weworkremotely: true
+  greenhouse: true
+  lever: true
+  ashby: true
+  serpapi: true    # needs SERPAPI_API_KEY
+  adzuna: true     # needs ADZUNA_APP_ID and ADZUNA_APP_KEY
+  usajobs: false   # US federal jobs; needs USAJOBS_API_KEY and USAJOBS_USER_AGENT
+
+# Public ATS boards to poll. Use the board token from the company's careers
+# URL, not the display name. Every token below returned a live board when
+# checked on 11 November 2026. Remove any that later 404, and add companies
+# you care about.
+ats_boards:
+  greenhouse:
+    - stripe
+    - gitlab
+    - airbnb
+    - figma
+    - datadog
+    - cloudflare
+    - discord
+    - vercel
+    - robinhood
+    - dropbox
+    - twilio
+    - coinbase
+    - instacart
+    - pinterest
+    - block
+    - reddit
+  lever:
+    - palantir
+  ashby:
+    - wealthsimple
+    - hopper
+    - notion
+    - openai
+    - linear
+    - ramp
+    - replit
+
+# How many recent Himalayas pages to fetch (up to 50 jobs per page). The
+# public API does not reliably filter by keyword, so this cap keeps the
+# scan short and focuses on recently posted roles.
+himalayas_pages: 3
+himalayas_page_size: 20
+
+# Arbeitnow pages (about 300 jobs each, mostly EU). One page is enough
+# for a daily pass.
+arbeitnow_pages: 1

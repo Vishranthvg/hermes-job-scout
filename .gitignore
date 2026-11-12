@@ -1,0 +1,32 @@
+# Secrets and local config
+.env
+profile.yaml
+resume.txt
+resume.pdf
+resume.docx
+resume.md
+
+# Runtime state (seen list and last-run snapshot)
+state/
+seen.json
+last_run.json
+**/.job-scout-state/
+**/*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo

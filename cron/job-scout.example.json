@@ -1,0 +1,17 @@
+{
+  "_comment": "Authored fields only, matching Hermes cron/jobs.py JOB_DEFINITION_FIELDS. Do not copy this into ~/.hermes/cron/jobs.json by hand: that file is owned by the scheduler (ids, next_run_at, state). Create the job with `hermes cron create` or by accepting the skill blueprint via /suggestions. See the README.",
+  "name": "Daily job scout",
+  "skills": ["job-scout"],
+  "skill": "job-scout",
+  "prompt": "Run the daily job-scout scan. Follow the job-scout skill exactly. If script output is already in context, use it and do not fetch job sites yourself. If the first line is NO_NEW_MATCHES, respond with only [SILENT]. Otherwise send a short digest: title, company, location, one-line reason, and URL for each match. After sending, run the script again with --update-seen. Do not invent details that are not in the script output.",
+  "script": "~/.hermes/skills/job-scout/scripts/job_scout.py",
+  "no_agent": false,
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 8 * * *",
+    "display": "0 8 * * *"
+  },
+  "schedule_display": "Every day at 8:00 AM local time",
+  "deliver": "origin",
+  "workdir": "~/.hermes/job-scout"
+}

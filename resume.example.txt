@@ -1,0 +1,32 @@
+Jordan Lee
+Toronto, Ontario, Canada
+Project Manager
+
+Summary
+Project manager with eight years leading cross-functional software and process
+implementations for mid-size and enterprise teams. Comfortable with Agile and
+hybrid delivery, stakeholder management, risk tracking, and vendor coordination.
+PMP certified. Open to remote and hybrid roles based in Canada.
+
+Experience
+Senior Project Manager, Northshore Digital (Toronto), 2021 to present
+- Led a 12-person delivery team through a CRM implementation for a financial
+  services client, on time and within a $1.4M budget.
+- Ran weekly stakeholder reviews, maintained a risk register, and coordinated
+  three external vendors.
+- Introduced a Scrum cadence and a shared status dashboard used by operations
+  and engineering.
+
+Project Manager, Lakeside Health Systems (Mississauga), 2017 to 2021
+- Managed EHR rollout across four clinics, including change management and
+  end-user training.
+- Tracked issues, dependencies, and cutover plans with clinical and IT leads.
+
+Skills
+Project management, PMP, Scrum, Agile, stakeholder management, risk management,
+implementation, vendor management, Jira, Confluence, MS Project, budget
+tracking, status reporting, cross-functional leadership.
+
+Education
+B.A., Commerce, University of Toronto
+Project Management Professional (PMP), PMI
